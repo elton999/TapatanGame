@@ -11,12 +11,14 @@ public class GameManagment : MonoBehaviour
     {
         if(Instance == null)
             Instance = this;
+
+        DontDestroyOnLoad(this);
     }
 
     public enum Players  {PLAYER_1, PLAYER_2};
     public enum GameType {PLAYER_VS_PLAYER, PLAYER_VS_CPU};
     public GameType CurrentGameType = GameType.PLAYER_VS_CPU;
-    public enum Status {PLAYING, MOVING_PLAYER, PLAYER_1_WIN, PLAYER_2_WIN}
+    public enum Status {PLAYING, MENU, MOVING_PLAYER, PLAYER_1_WIN, PLAYER_2_WIN}
     public Status CurrentStatus = GameManagment.Status.PLAYING;
     public Players PlayerTurn = GameManagment.Players.PLAYER_1;
     public Player SelectedPlayer;
