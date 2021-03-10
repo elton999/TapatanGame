@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagment : MonoBehaviour
 {
@@ -30,6 +31,12 @@ public class GameManagment : MonoBehaviour
     {
         if(this.CurrentStatus == Status.PLAYING)
             this.CheckWinner();
+
+        if(this.CurrentStatus == Status.PLAYER_1_WIN || this.CurrentStatus == Status.PLAYER_2_WIN){
+            if(Input.anyKey){
+                this.Restart();
+            }
+        }
     }
 
     [HideInInspector]
@@ -71,10 +78,29 @@ public class GameManagment : MonoBehaviour
         if(this.CurrentStatus == Status.PLAYER_1_WIN){
             foreach(Player _player in Board.Instance.Player1)
                 _player.GetComponent<Animator>().Play("win");
+
+            Board.Instance.WinText.text = "Player 1 Wins";
+            Board.Instance.WinText.color = Board.Instance.Player1[0].Color;
+            Board.Instance.WinScream.GetComponent<Animator>().Play("win");
+
         } else if(this.CurrentStatus == Status.PLAYER_2_WIN){
-            foreach(Player _player in Board.Instance.Player1)
+            foreach(Player _player in Board.Instance.Player2)
                 _player.GetComponent<Animator>().Play("win");
+
+            if(this.CurrentGameType == GameType.PLAYER_VS_CPU){
+                Board.Instance.WinText.text = "CPU Wins";
+            } else{
+                Board.Instance.WinText.text = "Player 2 Wins";
+            }
+            Board.Instance.WinText.color = Board.Instance.Player2[0].Color;
+            Board.Instance.WinScream.GetComponent<Animator>().Play("win");
         }
         
+    }
+
+    public void Restart(){
+        this.CurrentStatus = GameManagment.Status.PLAYING;
+        this.PlayerTurn = GameManagment.Players.PLAYER_1;
+        SceneManager.LoadScene("Tapatan", LoadSceneMode.Single);
     }
 }

@@ -34,7 +34,7 @@
      inkscape:guide-bbox="true"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="-8"
+     inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -213,6 +213,15 @@
        cx="45.190384"
        cy="72.857277"
        r="7.2108026"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ffffff;stroke-width:0.264583"
+       id="rect70"
+       width="30"
+       height="30"
+       x="4.8108511"
+       y="48.375786"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
   </g>

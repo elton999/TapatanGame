@@ -38,9 +38,7 @@ public class UIMenu : MonoBehaviour
     }
 
     public void Restart(){
-        GameManagment.Instance.CurrentStatus = GameManagment.Status.PLAYING;
-        GameManagment.Instance.PlayerTurn = GameManagment.Players.PLAYER_1;
-        SceneManager.LoadScene("Tapatan", LoadSceneMode.Single);
+        GameManagment.Instance.Restart();
     }
 
     public void ChangeFullScreemWindowed(){

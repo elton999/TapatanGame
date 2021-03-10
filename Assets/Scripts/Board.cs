@@ -1,14 +1,18 @@
-﻿using System.Globalization;
+﻿using System.Net.Mime;
+using System.Globalization;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Board : MonoBehaviour
 {
     public List<Transform> positions;
     public static Board Instance;
     // Start is called before the first frame update
+    public Text WinText;
+    public RectTransform WinScream;
 
     public List<List<int>> ValideMovementsPosition = new List<List<int>>();
     void Start()
