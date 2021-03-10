@@ -67,6 +67,14 @@ public class GameManagment : MonoBehaviour
             if(_player2_positions.ToArray().SequenceEqual(this.winValidate[option]))
                 this.CurrentStatus = Status.PLAYER_2_WIN;
         }
+
+        if(this.CurrentStatus == Status.PLAYER_1_WIN){
+            foreach(Player _player in Board.Instance.Player1)
+                _player.GetComponent<Animator>().Play("win");
+        } else if(this.CurrentStatus == Status.PLAYER_2_WIN){
+            foreach(Player _player in Board.Instance.Player1)
+                _player.GetComponent<Animator>().Play("win");
+        }
         
     }
 }
