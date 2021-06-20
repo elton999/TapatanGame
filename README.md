@@ -2,8 +2,8 @@
 Tapatan is a very popular game from the Philippines.
 
 ## Links
-[Unity3d download](https://unity3d.com/pt/get-unity/download)
-[Get Windows, linux or web build](https://elton-silva.itch.io/tapatan)
+-[Unity3d download](https://unity3d.com/pt/get-unity/download)
+-[Get Windows, linux or web build](https://elton-silva.itch.io/tapatan)
 
 ## How to play?
 align the circles like this:
