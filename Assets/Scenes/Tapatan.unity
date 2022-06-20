@@ -864,6 +864,7 @@ GameObject:
   - component: {fileID: 1803385723}
   - component: {fileID: 1803385722}
   - component: {fileID: 1803385724}
+  - component: {fileID: 1803385725}
   m_Layer: 9
   m_Name: Board
   m_TagString: Untagged
@@ -959,6 +960,7 @@ MonoBehaviour:
   - {fileID: 619524914}
   WinText: {fileID: 667560186}
   WinScream: {fileID: 1185081609}
+  speed: 15
   Players:
   - {fileID: 4556932654120710161, guid: 7fd69b4ce7d19094ca22965e57b372db, type: 3}
   - {fileID: 176946434055617641, guid: 9f0cf035bd12d084489c739556ae5d0f, type: 3}
@@ -967,6 +969,18 @@ MonoBehaviour:
   PositionCollidesList: []
   PositionPreFab: {fileID: 6834832235551059687, guid: aa5838bbd19cf5f4096f88601a5d3226,
     type: 3}
+--- !u!114 &1803385725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803385721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7cab5ae42e6080f9511b65fa31ae27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1866144453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,7 +1332,7 @@ PrefabInstance:
     - target: {fileID: 1700536568998675708, guid: 18c9ac301a12f9b4d813071a948cd731,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c9ac301a12f9b4d813071a948cd731, type: 3}

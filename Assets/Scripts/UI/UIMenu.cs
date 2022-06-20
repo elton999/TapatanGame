@@ -1,44 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class UIMenu : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+{   
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    private GameManagement _gameManagement { get => GameManagement.Instance; }
     public void StartGamePlayerVsPlayer(){
-        GameManagment.Instance.CurrentStatus = GameManagment.Status.PLAYING;
-        GameManagment.Instance.CurrentGameType = GameManagment.GameType.PLAYER_VS_PLAYER;
-        GameManagment.Instance.PlayerTurn = GameManagment.Players.PLAYER_1;
+        _gameManagement.CurrentStatus = GameManagement.Status.PLAYING;
+        _gameManagement.CurrentGameType = GameManagement.GameType.PLAYER_VS_PLAYER;
+        _gameManagement.PlayerTurn = GameManagement.Players.PLAYER_1;
         SceneManager.LoadScene("Tapatan", LoadSceneMode.Single);
     }
 
     public void StartGamePlayerVsCPU(){
-        GameManagment.Instance.CurrentStatus = GameManagment.Status.PLAYING;
-        GameManagment.Instance.CurrentGameType = GameManagment.GameType.PLAYER_VS_CPU;
-        GameManagment.Instance.PlayerTurn = GameManagment.Players.PLAYER_1;
+        _gameManagement.CurrentStatus = GameManagement.Status.PLAYING;
+        _gameManagement.CurrentGameType = GameManagement.GameType.PLAYER_VS_CPU;
+        _gameManagement.PlayerTurn = GameManagement.Players.PLAYER_1;
         SceneManager.LoadScene("Tapatan", LoadSceneMode.Single);
     }
 
     public void GoToMenu(){
-        GameManagment.Instance.CurrentStatus = GameManagment.Status.MENU;
+       _gameManagement.CurrentStatus = GameManagement.Status.MENU;
         SceneManager.LoadScene("menu", LoadSceneMode.Single);
     }
 
     public void Restart(){
-        GameManagment.Instance.Restart();
+        _gameManagement.Restart();
     }
 
     public void ChangeFullScreemWindowed(){

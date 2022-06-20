@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManagment : MonoBehaviour
+public class GameManagement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static GameManagment Instance;
+    public static GameManagement Instance;
     void Start()
     {
         if(Instance == null)
@@ -20,8 +20,9 @@ public class GameManagment : MonoBehaviour
     public enum GameType {PLAYER_VS_PLAYER, PLAYER_VS_CPU};
     public GameType CurrentGameType = GameType.PLAYER_VS_CPU;
     public enum Status {PLAYING, MENU, MOVING_PLAYER, PLAYER_1_WIN, PLAYER_2_WIN}
-    public Status CurrentStatus = GameManagment.Status.PLAYING;
-    public Players PlayerTurn = GameManagment.Players.PLAYER_1;
+    public Status CurrentStatus = GameManagement.Status.PLAYING;
+    public bool IsPlaying { get => CurrentStatus == Status.PLAYING; }
+    public Players PlayerTurn = GameManagement.Players.PLAYER_1;
     public Player SelectedPlayer;
     public PositionCollider SelectedNextPosition;
 
@@ -99,8 +100,8 @@ public class GameManagment : MonoBehaviour
     }
 
     public void Restart(){
-        this.CurrentStatus = GameManagment.Status.PLAYING;
-        this.PlayerTurn = GameManagment.Players.PLAYER_1;
+        this.CurrentStatus = GameManagement.Status.PLAYING;
+        this.PlayerTurn = GameManagement.Players.PLAYER_1;
         SceneManager.LoadScene("Tapatan", LoadSceneMode.Single);
     }
 }
